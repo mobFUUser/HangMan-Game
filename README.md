@@ -1,4 +1,5 @@
 # hangman_001
-Hangman game Created in C++ 
-Using iostream & cstring lib
-created in 6/23/25
+Hangman game written in C++ 
+
+
+6/23/25
