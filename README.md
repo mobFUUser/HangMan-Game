@@ -1,5 +1,5 @@
-# hangman_001
-Hangman game written in C++ 
+Hangman Game Wirtten in C++
 
+Created By mobFUU
+written in 6/25/25
 
-6/23/25
