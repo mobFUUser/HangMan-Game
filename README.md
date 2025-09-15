@@ -1,5 +1,6 @@
 Hangman Game Wirtten in C++
 
 Created By mobFUU
-written in 6/25/25
-fixed loopholes in 6/25/25
+written in 6/23/25
+fixed something??(oh really) 9/15/25
+
