@@ -3,7 +3,7 @@
 
 using namespace std;
 
-char guessing(char word[10], int word_len, char tempword[10]) {
+char guessing(char word[30], int word_len, char tempword[30]) {
 
     cout << "\ninput a charcater: ";
     char guessed;
@@ -14,13 +14,18 @@ char guessing(char word[10], int word_len, char tempword[10]) {
     
     bool correct = false;
 
+    //checking if the letter is on the word 
     for (int x = 0; x <= word_len; x++) {
         if (word[x] == lower || word[x] == upper){
+            if (tempword[x] == word[x]){
+                cout << "The letter is already Entered\n";
+                return tempword[10];    
+            }
             tempword[x] = word[x];
             correct = true;
         }
     }
-
+    //showing the guessed letters and blank if unguessed
     for (int y = 0; y < word_len; y++){
         if(tempword[y] != 0) {
             cout << tempword[y];
@@ -28,12 +33,13 @@ char guessing(char word[10], int word_len, char tempword[10]) {
             cout << "_ ";
         }
     }
-        cout << '\n';
+    cout << '\n';
 
+    //retuns -1 if guessed wrong and retuns tempword if guessed right 
+    
     if (correct == true){
         return tempword[10];
     } 
-
     return -1;
 }
 
@@ -98,9 +104,14 @@ void theman(int no_mistakes){
 
 int main(){
 
-    char word[10] = {"Cartolina"};//the word
+    char word[30];
+
+    cout << "ENTER THE WORD TO BE GUESSED: ";
+    cin >> word;
+
+
     int word_len =  strlen(word); // the length 
-    char tempword[10];
+    char tempword[30];
 
     int no_mistakes = 0;
     bool gameover = false;
@@ -120,11 +131,13 @@ int main(){
         }
             theman(no_mistakes);
 
+
         if (no_mistakes == 5){
             cout << "\nYOU ARE NOT THE SAVIOR\n";
             gameover = true;
         }
 
+        //comparing the two words if they are identical
         if (strcmp(tempword, word) == 0){
             cout << "\nYOU SAVED THE MAN LESGO\n";
             gameover = true;
